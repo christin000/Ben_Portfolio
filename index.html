@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ben Joseph — Graphic Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="white"/><rect x="2" y="2" width="60" height="60" rx="11" fill="none" stroke="%232563eb" stroke-width="2"/><text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="Poppins, Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="%232563eb">BJ</text></svg>' />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="antialiased text-neutral-900 bg-white selection:bg-blue-200/60 scroll-smooth" style="--accent: #2563eb;">
+  <!-- Custom Cursor -->
+  <div id="cursor" class="fixed z-[9999] pointer-events-none rounded-full border border-[var(--accent)] hidden md:block" style="width:16px;height:16px;transform:translate(-50%,-50%);transition:transform 120ms ease, width 140ms ease, height 140ms ease, background-color 140ms ease;backdrop-filter:saturate(140%) blur(2px);"></div>
+
+  <!-- Scroll Progress -->
+  <div class="fixed top-0 left-0 right-0 z-[80]">
+    <div class="h-0.5 bg-neutral-200/70"></div>
+    <div id="progress" class="h-0.5 bg-[var(--accent)] w-0"></div>
+  </div>
+
+  <!-- Abstract Background Shapes (Parallax) -->
+  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+    <div class="absolute -top-40 -left-32 h-[420px] w-[420px] rounded-full bg-[var(--accent)]/6 blur-3xl" data-parallax-speed="0.05" data-parallax-section="window" style="will-change: transform;"></div>
+    <div class="absolute top-1/3 -right-40 h-[520px] w-[520px] rounded-full bg-[var(--accent)]/5 blur-3xl" data-parallax-speed="-0.08" data-parallax-section="window" style="will-change: transform;"></div>
+    <div class="absolute -bottom-48 -left-28 h-[560px] w-[560px] rounded-full border border-[var(--accent)]/10" data-parallax-speed="0.03" data-parallax-section="window" style="will-change: transform;"></div>
+    <div class="absolute bottom-8 left-10 h-['240px'] w-['240px'] rounded-full border border-[var(--accent)]/10" data-parallax-speed="-0.06" data-parallax-section="window" style="will-change: transform;"></div>
+    <div class="absolute -right-12 top-24 h-1 w-[420px] bg-[var(--accent)]/10 rounded-full rotate-12" data-parallax-speed="0.07" data-parallax-section="window" style="will-change: transform;"></div>
+    <div class="absolute right-10 top-44 h-1 w-60 bg-[var(--accent)]/10 rounded-full rotate-12" data-parallax-speed="-0.09" data-parallax-section="window" style="will-change: transform;"></div>
+
+    <div class="absolute top-12 left-1/2 -translate-x-1/2 h-24 w-24 rounded-full border border-[var(--accent)]/20" data-parallax-speed="0.045" data-parallax-section="window" style="will-change: transform;"></div>
+    <div class="absolute bottom-24 right-1/3 h-20 w-20 rounded-lg border-2 border-[var(--accent)]/15 rotate-12" data-parallax-speed="-0.04" data-parallax-section="window" style="will-change: transform;"></div>
+    <svg class="absolute top-1/4 left-6" width="120" height="120" viewBox="0 0 120 120" data-parallax-speed="0.02" data-parallax-section="window" style="will-change: transform;">
+      <polygon points="60,10 110,110 10,110" fill="none" stroke="rgba(37,99,235,0.15)" stroke-width="2"></polygon>
+    </svg>
+    <div class="absolute bottom-40 left-1/4 h-1 w-48 bg-[var(--accent)]/10 rounded-full -rotate-6" data-parallax-speed="0.065" data-parallax-section="window" style="will-change: transform;"></div>
+    <div class="absolute top-[62%] left-[12%] grid grid-cols-3 gap-2" data-parallax-speed="-0.055" data-parallax-section="window" style="will-change: transform;">
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/15"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/15"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/15"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/15"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/15"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/15"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/15"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/15"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/15"></span>
+    </div>
+  </div>
+
+  <!-- Intro Loader -->
+  <div id="loader" class="fixed inset-0 z-[90] flex items-center justify-center bg-white">
+    <div class="relative flex items-center justify-center">
+      <div class="absolute inset-0 rounded-full border border-neutral-200 animate-ping"></div>
+      <div class="px-6 py-3 rounded-xl border border-neutral-200 shadow-sm bg-white/80 backdrop-blur-sm">
+        <span style="font-family:'Poppins', Inter, ui-sans-serif" class="text-2xl font-semibold tracking-tight text-neutral-900">BJ</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="fixed top-3 left-1/2 -translate-x-1/2 z-[70]">
+    <div class="mx-auto w-[92vw] md:w-[86vw] lg:w-[78vw]">
+      <div class="flex items-center justify-between rounded-2xl bg-white/70 backdrop-blur-xl border border-neutral-200/70 shadow-sm px-4 md:px-6 py-2.5">
+        <a href="#hero" class="flex items-center gap-2 hover:scale-[1.02] transition" data-cursor="hover" aria-label="Home">
+          <div class="h-7 w-7 rounded-md bg-[var(--accent)]/10 border border-[var(--accent)]/30 flex items-center justify-center">
+            <span style="font-family:'Poppins', Inter" class="text-[12px] font-semibold tracking-tight text-[var(--accent)]">BJ</span>
+          </div>
+          <span style="font-family:'Poppins', Inter" class="text-sm font-medium tracking-tight text-neutral-900 hidden sm:block">Ben&nbsp;Joseph</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-1">
+          <a href="#work" class="px-3 py-2 rounded-md text-sm text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover">Work</a>
+          <a href="#about" class="px-3 py-2 rounded-md text-sm text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover">About</a>
+          <!-- <a href="#case" class="px-3 py-2 rounded-md text-sm text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover">Case Studies</a> -->
+          <a href="#contact" class="px-3 py-2 rounded-md text-sm text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <div class="hidden sm:flex items-center gap-1.5 pr-2 border-r border-neutral-200">
+            <button class="h-5 w-5 rounded-full border border-neutral-300 bg-[#2563eb]" aria-label="Switch to Electric Blue" data-accent="#2563eb" data-cursor="hover"></button>
+            <button class="h-5 w-5 rounded-full border border-neutral-300 bg-[#ef4444]" aria-label="Switch to Vivid Coral" data-accent="#ef4444" data-cursor="hover"></button>
+            <button class="h-5 w-5 rounded-full border border-neutral-300 bg-[#84cc16]" aria-label="Switch to Chartreuse" data-accent="#84cc16" data-cursor="hover"></button>
+          </div>
+
+          <div class="hidden md:flex items-center gap-2">
+            <!-- <a href="#" aria-label="Behance" class="p-2 rounded-md hover:bg-neutral-100 text-neutral-700 hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover"><i data-lucide="behance"></i></a>
+            <a href="#" aria-label="Dribbble" class="p-2 rounded-md hover:bg-neutral-100 text-neutral-700 hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover"><i data-lucide="dribbble"></i></a> -->
+            <a href="https://www.instagram.com/ben_joseph_10/" aria-label="Instagram" class="p-2 rounded-md hover:bg-neutral-100 text-neutral-700 hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover"><i data-lucide="instagram"></i></a>
+            <a href="https://www.linkedin.com/in/ben-joseph-00a0a3190/" aria-label="LinkedIn" class="p-2 rounded-md hover:bg-neutral-100 text-neutral-700 hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover"><i data-lucide="linkedin"></i></a>
+          </div>
+
+          <a href="https://github.com/bendesigns99-hub" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-800 hover:border-[var(--accent)] hover:text-[var(--accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover" aria-label="GitHub">
+            <i data-lucide="github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="assets/resume/BJ Resume.pdf" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 rounded-md border border-[var(--accent)] bg-white text-[var(--accent)] px-3 py-2 text-sm hover:bg-[var(--accent)] hover:text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover" aria-label="Resume">
+            <i data-lucide="file-text"></i>
+            <span>Resume</span>
+          </a>
+
+          <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-neutral-100 text-neutral-700 hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" aria-label="Open menu" data-cursor="hover">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="md:hidden mt-2 rounded-2xl bg-white/80 backdrop-blur-xl border border-neutral-200/70 shadow-sm px-4 py-2 hidden">
+        <nav class="grid">
+          <a href="#work" class="px-3 py-2 rounded-md text-sm text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100" data-cursor="hover">Work</a>
+          <a href="#about" class="px-3 py-2 rounded-md text-sm text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100" data-cursor="hover">About</a>
+          <a href="#case" class="px-3 py-2 rounded-md text-sm text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100" data-cursor="hover">Case Studies</a>
+          <a href="#contact" class="px-3 py-2 rounded-md text-sm text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100" data-cursor="hover">Contact</a>
+          <a href="https://github.com/benjoseph" target="_blank" rel="noopener noreferrer" class="mt-1 px-3 py-2 rounded-md text-sm text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100" data-cursor="hover">GitHub</a>
+          <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="mt-1 px-3 py-2 rounded-md text-sm text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100" data-cursor="hover">Resume</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+  <!-- 3D background (put your 3D model/canvas here later) -->
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <p class="subtitle">GRAPHIC DESIGN</p>
+    <h1 class="title">
+      PORT <span>20</span><br>
+      FOLIO <span>25</span>
+    </h1>
+    <p class="byline">by <strong>Ben Joseph</strong></p>
+  </div>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&display=swap');
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: #f7f5f2;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, #a88dfc33, transparent 70%);
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none; /* So clicks pass through if needed */
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #2d2d2d;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .subtitle {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-weight: 500;
+      letter-spacing: 3px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #5f4fff;
+      display: inline-block;
+      transform: translateX(-3rem);
+    }
+
+    .title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 1;
+      color: #4f5bff;
+      text-transform: uppercase;
+    }
+
+    .title span {
+      color: #2d2d2d;
+      font-size: 0.9em;
+    }
+
+    .byline {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #333;
+    }
+  </style>
+</section>
+
+<!-- Put this where you want the marquee inside your <body> -->
+<style>
+  /* Local styles — safe to paste in the body */
+  .marquee-container { width:100%; overflow:hidden; white-space:nowrap; box-sizing:border-box; }
+  .marquee-fallback { display:inline-block; padding-left:100%; /* start off-screen */ animation:cssMarquee 12s linear infinite; }
+  @keyframes cssMarquee {
+    0%   { transform:translateX(0%); }
+    100% { transform:translateX(-100%); }
+  }
+  /* Optional: make text slightly larger / centered vertically */
+  .marquee-text { font-family:monospace, system-ui, sans-serif; font-size:1rem; line-height:2.2rem; }
+</style>
+
+<div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+<!-- CSS for Typewriter and Marquee -->
+<style>
+.typewriter::after {
+  content: "|";
+  animation: blink 0.8s infinite;
+  color: var(--accent);
+  margin-left: 4px;
+}
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* marquee animation */
+.marquee {
+  overflow: hidden;
+  position: relative;
+}
+.marquee-inner {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 25s linear infinite;
+}
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+<!-- Typewriter Script -->
+<script>
+const skills = ["Brand Identities", "UI/UX Design", "Web Experiences", "Illustrations", "Motion Graphics"];
+let index = 0, charIndex = 0;
+const speed = 120, eraseSpeed = 60, delay = 2000;
+const typeTarget = document.querySelector(".typewriter");
+
+function type() {
+  if (charIndex < skills[index].length) {
+    typeTarget.textContent += skills[index].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, speed);
+  } else {
+    setTimeout(erase, delay);
+  }
+}
+function erase() {
+  if (charIndex > 0) {
+    typeTarget.textContent = skills[index].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, eraseSpeed);
+  } else {
+    index = (index + 1) % skills.length;
+    setTimeout(type, speed);
+  }
+}
+document.addEventListener("DOMContentLoaded", () => setTimeout(type, 1000));
+</script>
+
+  <!-- Hero -->
+  <section id="hero" class="relative pt-28 md:pt-36">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-visible">
+      <div class="absolute -top-6 right-10 h-24 w-24 rounded-full border border-[var(--accent)]/15" data-parallax-speed="0.08" data-parallax-section="#hero" style="will-change: transform;"></div>
+      <div class="absolute bottom-6 left-6 h-2 w-40 bg-[var(--accent)]/10 rounded-full" data-parallax-speed="-0.06" data-parallax-section="#hero" style="will-change: transform;"></div>
+    </div>
+
+    <div class="mx-auto w-[92vw] md:w-[86vw] lg:w-[78vw]">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="will-reveal opacity-0 translate-y-6 transition duration-700">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 bg-white/70 backdrop-blur-md text-[13px] text-neutral-700">
+            <span class="h-2 w-2 rounded-full bg-[var(--accent)]"></span>
+            Available for freelance work
+          </div>
+          <h1 style="font-family:'Poppins', Inter; will-change: filter;" class="mt-4 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-neutral-900 filter drop-shadow-[0_0_10px_rgba(37,99,235,0.18)] hover:drop-shadow-[0_0_22px_rgba(37,99,235,0.36)] transition">
+            I’m Ben Joseph,<br class="hidden sm:block" /> a Graphic Designer crafting bold, modern designs.
+          </h1>
+          <p class="mt-4 text-neutral-600 text-base md:text-lg leading-relaxed">
+            I help startups and teams translate ideas into clean, high-impact visuals—identity systems, digital interfaces, and expressive illustration.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#work" class="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-[var(--accent)] bg-white text-[var(--accent)] px-5 py-3 text-sm font-medium hover:scale-[1.02] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover">
+              <span class="absolute inset-0 -z-10 origin-left scale-x-0 bg-[var(--accent)] transition-transform duration-300 group-hover:scale-x-100"></span>
+              <span class="relative group-hover:text-white">View My Work</span>
+              <i class="relative group-hover:text-white" data-lucide="arrow-right"></i>
+            </a>
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-white/70 backdrop-blur-md text-neutral-900 hover:border-[var(--accent)] hover:text-[var(--accent)] px-5 py-3 text-sm font-medium hover:scale-[1.02] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover">
+              Contact Me <i data-lucide="send"></i>
+            </a>
+          </div>
+          <div class="mt-10 flex items-center gap-6 text-sm text-neutral-500">
+            <div class="flex items-center gap-2">
+              <i class="text-neutral-700" data-lucide="sparkles"></i>
+              <span>Brand Identity</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="text-neutral-700" data-lucide="layout-dashboard"></i>
+              <span>UI & Web</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="text-neutral-700" data-lucide="pen-tool"></i>
+              <span>Illustration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative aspect-[4/3] md:aspect-auto md:h-[520px] rounded-2xl border border-neutral-200 bg-neutral-50 overflow-hidden will-reveal opacity-0 translate-y-6 transition duration-700">
+          <img src="assets/wallpaper/Firefly flowers orange sky 6820.jpg" alt="Geometric background" class="absolute inset-0 h-full w-full object-cover opacity-30" />
+          <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 h-24 w-24 rounded-full border-2 border-[var(--accent)]/70 animate-pulse"></div>
+            <div class="absolute bottom-14 right-12 h-20 w-20 rounded-xl border-2 border-[var(--accent)]/70 rotate-12"></div>
+            <svg class="absolute top-1/2 left-10 -translate-y-1/2" width="120" height="120" viewBox="0 0 120 120">
+              <polygon points="60,10 110,110 10,110" fill="none" stroke="currentColor" class="text-[var(--accent)]/70" stroke-width="2"></polygon>
+            </svg>
+            <div class="absolute top-8 right-8 h-2 w-36 bg-[var(--accent)]/60 rounded-full"></div>
+            <div class="absolute top-16 right-8 h-2 w-24 bg-[var(--accent)]/20 rounded-full"></div>
+            <div class="absolute left-6 bottom-6 right-6 rounded-2xl bg-white/60 backdrop-blur-md border border-white/70 shadow-lg p-5 hover:shadow-xl transition">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-xs uppercase tracking-wide text-neutral-500">Latest</p>
+                  <p style="font-family:'Poppins', Inter" class="text-lg font-semibold tracking-tight text-neutral-900 filter drop-shadow-[0_0_6px_rgba(37,99,235,0.12)] hover:drop-shadow-[0_0_14px_rgba(37,99,235,0.28)] transition">Brand Sprint</p>
+                </div>
+                <div class="flex items-center gap-2 text-[var(--accent)]">
+                  <i data-lucide="chevrons-right"></i>
+                </div>
+              </div>
+              <p class="mt-2 text-sm text-neutral-600">A fast identity exploration with sharp geometry and confident color.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<section class="logofolio">
+  <div class="intro">
+    <h2>Software</h2>
+    <p>
+      Throughout my experience as a designer, I have worked extensively with Adobe Creative Suite,
+      mastering tools such as Photoshop, Illustrator, InDesign, and more for professional design projects.
+    </p>
+    <p class="date">Date: 2021 - 2025</p>
+  </div>
+
+  <div class="logos">
+    <div class="logo-item"><pre>PS</pre><p>Photoshop</p></div>
+    <div class="logo-item"><pre>AI</pre><p>Illustrator</p></div>
+    <div class="logo-item"><pre>ID</pre><p>InDesign</p></div>
+    <div class="logo-item"><pre>AE</pre><p>After Effects</p></div>
+    <div class="logo-item"><pre>PR</pre><p>Premiere Pro</p></div>
+    <div class="logo-item"><pre>LR</pre><p>Lightroom</p></div>
+    <div class="logo-item"><pre>XD</pre><p>Adobe XD</p></div>
+    <div class="logo-item"><pre>AC</pre><p>Acrobat</p></div>
+    <div class="logo-item"><pre>DW</pre><p>Dreamweaver</p></div>
+  </div>
+</section>
+
+<!-- Put this where you want the marquee inside your <body> -->
+<style>
+  /* Local styles — safe to paste in the body */
+  .marquee-container { width:100%; overflow:hidden; white-space:nowrap; box-sizing:border-box; }
+  .marquee-fallback { display:inline-block; padding-left:100%; /* start off-screen */ animation:cssMarquee 12s linear infinite; }
+  @keyframes cssMarquee {
+    0%   { transform:translateX(0%); }
+    100% { transform:translateX(-100%); }
+  }
+  /* Optional: make text slightly larger / centered vertically */
+  .marquee-text { font-family:monospace, system-ui, sans-serif; font-size:1rem; line-height:2.2rem; }
+</style>
+
+<div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+
+<style>
+  body {
+    margin: 0;
+    background: #f5efe7;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .logofolio {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+    padding: 3rem;
+    gap: 2rem;
+  }
+
+  .intro {
+    text-align: left;
+    max-width: 300px;
+  }
+
+  .intro h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #11114e;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .intro p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .intro .date {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .logo-item {
+    text-align: center;
+    padding: 2.5rem;
+    border: 1px dotted #ccc;
+  }
+
+  .logo-item pre {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem; /* bigger logo letters */
+    font-weight: 700;
+    color: black;
+    margin: 0;
+  }
+
+  .logo-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0.5rem 0 0 0;
+  }
+
+  /* Remove outer borders */
+  .logo-item:nth-child(-n+3) { border-top: none; }
+  .logo-item:nth-child(3n+1) { border-left: none; }
+  .logo-item:nth-child(3n) { border-right: none; }
+  .logo-item:nth-last-child(-n+3) { border-bottom: none; }
+</style>
+
+<section class="hero-section">
+  <div class="hero-grid">
+    <div class="hero-cell flicker">DESIGNERS<br>AND</div>
+    <div class="hero-cell">DEVELOPERS</div>
+    <div class="hero-cell"></div>
+    <div class="hero-cell"></div>
+    <div class="hero-cell"></div>
+    <div class="hero-cell flicker">WHO</div>
+    <div class="hero-cell"></div>
+    <div class="hero-cell">BUILD<br>PRODUCTS<br>THAT</div>
+
+    <div class="hero-cell">GOOD IS NOT<br>WHERE WE<br>STOP. IT’S<br>WHERE WE<br>BEGIN.</div>
+    <div class="hero-cell"></div>
+    <div class="hero-cell typewriter" data-text="OUR CULTURE IS A REFLECTION OF OUR SHARED VALUES, ATTITUDES, BELIEFS, AND WORKING PRACTICES."></div>
+    <div class="hero-cell"></div>
+    <div class="hero-cell"></div>
+    <div class="hero-cell"></div>
+    <div class="hero-cell"></div>
+    <div class="hero-cell"></div>
+
+    <div class="hero-cell"></div>
+    <div class="hero-cell flicker">WILL</div>
+    <div class="hero-cell"></div>
+    <div class="hero-cell">YOUR USERS</div>
+    <div class="hero-cell"></div>
+    <div class="hero-cell typewriter" data-text="LOVE!"></div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    background: #e41d0f; /* red */
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    gap: 0;
+    width: 100%;
+    max-width: 1400px;
+  }
+
+  .hero-cell {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+    line-height: 1.4;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    white-space: pre-line;
+    overflow: hidden;
+  }
+
+  /* Flicker effect */
+  .hero-cell.flicker {
+    animation: flicker 2s infinite alternate;
+  }
+
+  @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+    20%, 24%, 55% { opacity: 0.4; }
+  }
+
+  /* Cursor blink */
+  .hero-cell.typewriter::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+    margin-left: 3px;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const typewriterCells = document.querySelectorAll(".hero-cell.typewriter");
+
+    typewriterCells.forEach(cell => {
+      const text = cell.getAttribute("data-text");
+      let i = 0;
+      let forward = true;
+
+      function type() {
+        if (forward) {
+          if (i < text.length) {
+            cell.textContent = text.substring(0, i + 1);
+            i++;
+          } else {
+            forward = false;
+            setTimeout(type, 1500); // pause before erasing
+            return;
+          }
+        } else {
+          if (i > 0) {
+            cell.textContent = text.substring(0, i - 1);
+            i--;
+          } else {
+            forward = true;
+            setTimeout(type, 1000); // pause before typing again
+            return;
+          }
+        }
+        setTimeout(type, forward ? 50 : 30); // speed typing vs erasing
+      }
+
+      type();
+    });
+  });
+</script>
+
+
+<div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+
+  <!-- Featured Work -->
+  <section id="work" class="relative mt-24 md:mt-32">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-visible">
+      <div class="absolute top-2 left-8 h-16 w-16 rounded-full border border-[var(--accent)]/15" data-parallax-speed="0.04" data-parallax-section="#work" style="will-change: transform;"></div>
+      <div class="absolute bottom-8 right-10 h-1 w-28 bg-[var(--accent)]/10 rounded-full rotate-3" data-parallax-speed="-0.05" data-parallax-section="#work" style="will-change: transform;"></div>
+    </div>
+
+    <div class="mx-auto w-[92vw] md:w-[86vw] lg:w-[78vw]">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <h2 style="font-family:'Poppins', Inter; will-change: filter;" class="text-3xl md:text-4xl font-semibold tracking-tight text-neutral-900 will-reveal opacity-0 translate-y-6 transition duration-700 filter drop-shadow-[0_0_8px_rgba(37,99,235,0.14)] hover:drop-shadow-[0_0_18px_rgba(37,99,235,0.3)]">Featured Work</h2>
+          <p class="mt-2 text-neutral-600 will-reveal opacity-0 translate-y-6 transition duration-700">A selection across branding, UI, and illustration.</p>
+        </div>
+        <div class="hidden md:flex items-center gap-2 will-reveal opacity-0 translate-y-6 transition duration-700">
+          <button class="px-3 py-2 rounded-md text-sm border border-neutral-200 bg-white hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="all" data-cursor="hover">All</button>
+          <button class="px-3 py-2 rounded-md text-sm border border-neutral-200 bg-white hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="branding" data-cursor="hover">Branding</button>
+          <button class="px-3 py-2 rounded-md text-sm border border-neutral-200 bg-white hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="ui" data-cursor="hover">UI</button>
+          <button class="px-3 py-2 rounded-md text-sm border border-neutral-200 bg-white hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="illustration" data-cursor="hover">Illustration</button>
+          <button class="px-3 py-2 rounded-md text-sm border border-neutral-200 bg-white hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="packaging" data-cursor="hover">Packaging</button>
+        </div>
+      </div>
+
+      <div class="mt-4 md:hidden flex gap-2 overflow-x-auto will-reveal opacity-0 translate-y-6 transition duration-700">
+        <button class="px-3 py-2 rounded-md text-sm border border-neutral-200 bg-white whitespace-nowrap" data-filter="all" data-cursor="hover">All</button>
+        <button class="px-3 py-2 rounded-md text-sm border border-neutral-200 bg-white whitespace-nowrap" data-filter="branding" data-cursor="hover">Branding</button>
+        <button class="px-3 py-2 rounded-md text-sm border border-neutral-200 bg-white whitespace-nowrap" data-filter="ui" data-cursor="hover">UI</button>
+        <button class="px-3 py-2 rounded-md text-sm border border-neutral-200 bg-white whitespace-nowrap" data-filter="illustration" data-cursor="hover">Illustration</button>
+        <button class="px-3 py-2 rounded-md text-sm border border-neutral-200 bg-white whitespace-nowrap" data-filter="packaging" data-cursor="hover">Packaging</button>
+      </div>
+
+      <div class="mt-8 grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 will-reveal opacity-0 translate-y-6 transition duration-700">
+        <a href="https://github.com/bendesigns99-hub" target="_blank" rel="noopener noreferrer" title="Open on GitHub" class="group relative lg:col-span-7 rounded-2xl overflow-hidden border border-neutral-200 bg-white tilt hover:shadow-lg hover:outline hover:outline-1 hover:outline-[var(--accent)]/25 transition" data-category="branding" data-cursor="hover">
+          <img class="h-64 md:h-80 w-full object-cover" src="assets/tokio/Thailand Backdrop - 1920x1080 1.jpg" alt="Branding mockup" />
+          <div class="absolute inset-0 bg-[var(--accent)]/0 group-hover:bg-[var(--accent)]/10 transition-colors"></div>
+          <div class="absolute bottom-4 left-4 right-4 rounded-xl border border-white/60 bg-white/60 backdrop-blur-md p-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition">
+            <div class="flex items-center justify-between">
+              <div>
+                <p style="font-family:'Poppins', Inter" class="text-lg font-semibold tracking-tight text-neutral-900">Edelweiss Tokioy</p>
+                <p class="text-sm text-neutral-600">Bold, confident type.</p>
+              </div>
+              <i class="text-[var(--accent)]" data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/bendesigns99-hub" target="_blank" rel="noopener noreferrer" title="Open on GitHub" class="group relative lg:col-span-5 rounded-2xl overflow-hidden border border-neutral-200 bg-white tilt hover:shadow-lg hover:outline hover:outline-1 hover:outline-[var(--accent)]/25 transition" data-category="ui" data-cursor="hover">
+          <img class="h-64 w-full object-cover" src="assets/tokio/Thailand Backdrop - 1920x1080 2.jpg" alt="UI concept" />
+          <div class="absolute inset-0 bg-[var(--accent)]/0 group-hover:bg-[var(--accent)]/10 transition-colors"></div>
+          <div class="absolute bottom-4 left-4 right-4 rounded-xl border border-white/60 bg-white/60 backdrop-blur-md p-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition">
+            <div class="flex items-center justify-between">
+              <div>
+                <p style="font-family:'Poppins', Inter" class="text-lg font-semibold tracking-tight text-neutral-900">Edelweiss Tokio</p>
+                <p class="text-sm text-neutral-600">Clean grids, crisp motion.</p>
+              </div>
+              <i class="text-[var(--accent)]" data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/bendesigns99-hub" target="_blank" rel="noopener noreferrer" title="Open on GitHub" class="group relative lg:col-span-4 rounded-2xl overflow-hidden border border-neutral-200 bg-white tilt hover:shadow-lg hover:outline hover:outline-1 hover:outline-[var(--accent)]/25 transition" data-category="illustration" data-cursor="hover">
+          <img class="h-60 w-full object-cover" src="assets/wallpaper/Firefly flowers orange sky 6820.jpg" alt="Illustration" />
+          <div class="absolute inset-0 bg-[var(--accent)]/0 group-hover:bg-[var(--accent)]/10 transition-colors"></div>
+          <div class="absolute bottom-4 left-4 right-4 rounded-xl border border-white/60 bg-white/60 backdrop-blur-md p-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition">
+            <div class="flex items-center justify-between">
+              <div>
+                <p style="font-family:'Poppins', Inter" class="text-lg font-semibold tracking-tight text-neutral-900">Vibrant Editorial Set</p>
+                <p class="text-sm text-neutral-600">Playful lines & color.</p>
+              </div>
+              <i class="text-[var(--accent)]" data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <a href="hhttps://github.com/bendesigns99-hub" target="_blank" rel="noopener noreferrer" title="Open on GitHub" class="group relative lg:col-span-4 rounded-2xl overflow-hidden border border-neutral-200 bg-white tilt hover:shadow-lg hover:outline hover:outline-1 hover:outline-[var(--accent)]/25 transition" data-category="packaging" data-cursor="hover">
+          <img class="h-60 w-full object-cover" src="assets/wallpaper/Firefly splash of colours (more focused on our new orange & blue) shades different 31841 V2.jpg" alt="Packaging" />
+          <div class="absolute inset-0 bg-[var(--accent)]/0 group-hover:bg-[var(--accent)]/10 transition-colors"></div>
+          <div class="absolute bottom-4 left-4 right-4 rounded-xl border border-white/60 bg-white/60 backdrop-blur-md p-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition">
+            <div class="flex items-center justify-between">
+              <div>
+                <p style="font-family:'Poppins', Inter" class="text-lg font-semibold tracking-tight text-neutral-900">Natura Box System</p>
+                <p class="text-sm text-neutral-600">Sustainable, structured.</p>
+              </div>
+              <i class="text-[var(--accent)]" data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/bendesigns99-hub" target="_blank" rel="noopener noreferrer" title="Open on GitHub" class="group relative lg:col-span-4 rounded-2xl overflow-hidden border border-neutral-200 bg-white tilt hover:shadow-lg hover:outline hover:outline-1 hover:outline-[var(--accent)]/25 transition" data-category="branding" data-cursor="hover">
+          <img class="h-60 w-full object-cover" src="assets/tokio/157772-OULMK1-221.jpg" alt="Brand direction" />
+          <div class="absolute inset-0 bg-[var(--accent)]/0 group-hover:bg-[var(--accent)]/10 transition-colors"></div>
+          <div class="absolute bottom-4 left-4 right-4 rounded-xl border border-white/60 bg-white/60 backdrop-blur-md p-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition">
+            <div class="flex items-center justify-between">
+              <div>
+                <p style="font-family:'Poppins', Inter" class="text-lg font-semibold tracking-tight text-neutral-900">Personal Project</p>
+                <p class="text-sm text-neutral-600">Minimal, assertive identity.</p>
+              </div>
+              <i class="text-[var(--accent)]" data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/bendesigns99-hub" target="_blank" rel="noopener noreferrer" title="Open on GitHub" class="group relative lg:col-span-8 rounded-2xl overflow-hidden border border-neutral-200 bg-white tilt hover:shadow-lg hover:outline hover:outline-1 hover:outline-[var(--accent)]/25 transition" data-category="ui" data-cursor="hover">
+          <img class="h-64 md:h-72 w-full object-cover" src="assets/tokio/AMPKM - Landing Page_Landing Page Desktop.jpg" alt="Web design" />
+          <div class="absolute inset-0 bg-[var(--accent)]/0 group-hover:bg-[var(--accent)]/10 transition-colors"></div>
+          <div class="absolute bottom-4 left-4 right-4 rounded-xl border border-white/60 bg-white/60 backdrop-blur-md p-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition">
+            <div class="flex items-center justify-between">
+              <div>
+                <p style="font-family:'Poppins', Inter" class="text-lg font-semibold tracking-tight text-neutral-900">Studio Landing UI</p>
+                <p class="text-sm text-neutral-600">Grid motion + type hierarchy.</p>
+              </div>
+              <i class="text-[var(--accent)]" data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="relative mt-24 md:mt-32">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-visible">
+      <div class="absolute top-6 right-12 h-14 w-14 rounded-xl border border-[var(--accent)]/15 rotate-12" data-parallax-speed="0.05" data-parallax-section="#about" style="will-change: transform;"></div>
+      <div class="absolute bottom-8 left-10 h-1 w-24 bg-[var(--accent)]/10 rounded-full -rotate-6" data-parallax-speed="-0.05" data-parallax-section="#about" style="will-change: transform;"></div>
+    </div>
+
+    <div class="mx-auto w-[92vw] md:w-[86vw] lg:w-[78vw]">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="relative rounded-2xl overflow-hidden border border-neutral-200 will-reveal opacity-0 translate-y-6 transition duration-700">
+          <img class="w-full h-[460px] object-cover" src="assets/wallpaper/Firefly splash of colours (more focused on our new orange & blue) shades different 31841 V2.jpg" alt="Ben Joseph portrait" />
+          <div class="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-white/70 backdrop-blur-md border border-neutral-200 text-xs text-neutral-700">Hello!</div>
+        </div>
+        <div class="will-reveal opacity-0 translate-y-6 transition duration-700">
+          <h3 style="font-family:'Poppins', Inter; will-change: filter;" class="text-2xl md:text-3xl font-semibold tracking-tight text-neutral-900 filter drop-shadow-[0_0_7px_rgba(37,99,235,0.14)] hover:drop-shadow-[0_0_16px_rgba(37,99,235,0.3)] transition">Design with intention. Detail with discipline.</h3>
+          <p class="mt-4 text-neutral-600 leading-relaxed">
+            I’m a graphic designer based in London, blending geometric precision with expressive color. I partner with startups and studios to shape brands, ship clear UI, and illustrate concepts that stick.
+          </p>
+          <div class="mt-6 grid grid-cols-2 gap-4">
+            <div class="rounded-xl border border-neutral-200 bg-white/70 backdrop-blur-sm p-4 hover:shadow-md transition">
+              <div class="flex items-center gap-2 text-neutral-800">
+                <i class="text-[var(--accent)]" data-lucide="pen-tool"></i>
+                <span style="font-family:'Poppins', Inter" class="text-sm font-medium">Identity Design</span>
+              </div>
+              <p class="mt-1 text-sm text-neutral-600">Logos, systems, brand guides.</p>
+            </div>
+            <div class="rounded-xl border border-neutral-200 bg-white/70 backdrop-blur-sm p-4 hover:shadow-md transition">
+              <div class="flex items-center gap-2 text-neutral-800">
+                <i class="text-[var(--accent)]" data-lucide="layout-dashboard"></i>
+                <span style="font-family:'Poppins', Inter" class="text-sm font-medium">UI & Web</span>
+              </div>
+              <p class="mt-1 text-sm text-neutral-600">Designing clear digital flows.</p>
+            </div>
+            <div class="rounded-xl border border-neutral-200 bg-white/70 backdrop-blur-sm p-4 hover:shadow-md transition">
+              <div class="flex items-center gap-2 text-neutral-800">
+                <i class="text-[var(--accent)]" data-lucide="palette"></i>
+                <span style="font-family:'Poppins', Inter" class="text-sm font-medium">Art Direction</span>
+              </div>
+              <p class="mt-1 text-sm text-neutral-600">Concept to visual language.</p>
+            </div>
+            <div class="rounded-xl border border-neutral-200 bg-white/70 backdrop-blur-sm p-4 hover:shadow-md transition">
+              <div class="flex items-center gap-2 text-neutral-800">
+                <i class="text-[var(--accent)]" data-lucide="type"></i>
+                <span style="font-family:'Poppins', Inter" class="text-sm font-medium">Typography</span>
+              </div>
+              <p class="mt-1 text-sm text-neutral-600">Structure, rhythm, hierarchy.</p>
+            </div>
+          </div>
+          <div class="mt-6 flex items-center gap-3">
+            <a href="#" class="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-[var(--accent)] bg-white text-[var(--accent)] px-5 py-3 text-sm font-medium hover:scale-[1.02] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover">
+              <span class="absolute inset-0 -z-10 origin-left scale-x-0 bg-[var(--accent)] transition-transform duration-300 group-hover:scale-x-100"></span>
+              <span class="relative group-hover:text-white">Download CV</span>
+              <i class="relative group-hover:text-white" data-lucide="download"></i>
+            </a>
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-white/70 backdrop-blur-md text-neutral-900 hover:border-[var(--accent)] hover:text-[var(--accent)] px-5 py-3 text-sm font-medium hover:scale-[1.02] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]" data-cursor="hover">
+              Let’s Collaborate <i data-lucide="handshake"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="relative mt-24 md:mt-32">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-visible">
+      <div class="absolute top-4 left-8 h-12 w-12 rounded-full border border-[var(--accent)]/15" data-parallax-speed="0.05" data-parallax-section="#skills" style="will-change: transform;"></div>
+      <div class="absolute bottom-10 right-12 h-1 w-32 bg-[var(--accent)]/10 rounded-full rotate-6" data-parallax-speed="-0.06" data-parallax-section="#skills" style="will-change: transform;"></div>
+    </div>
+
+    <div class="mx-auto w-[92vw] md:w-[86vw] lg:w-[78vw]">
+      <div class="flex items-end justify-between">
+        <h3 style="font-family:'Poppins', Inter; will-change: filter;" class="text-2xl md:text-3xl font-semibold tracking-tight text-neutral-900 filter drop-shadow-[0_0_7px_rgba(37,99,235,0.14)] hover:drop-shadow-[0_0_16px_rgba(37,99,235,0.3)] transition will-reveal opacity-0 translate-y-6 duration-700">Skills</h3>
+      </div>
+
+      <div class="mt-6 rounded-2xl border border-neutral-200 bg-white/70 backdrop-blur-md p-5 md:p-6 will-reveal opacity-0 translate-y-6 duration-700">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="rounded-xl border border-neutral-200 bg-white p-4 hover:shadow-md transition">
+            <div class="flex items-center gap-2">
+              <i class="text-[var(--accent)]" data-lucide="figma"></i>
+              <span style="font-family:'Poppins', Inter" class="text-sm font-medium">Figma</span>
+            </div>
+            <p class="mt-1 text-sm text-neutral-600">Design systems, prototyping.</p>
+          </div>
+          <div class="rounded-xl border border-neutral-200 bg-white p-4 hover:shadow-md transition">
+            <div class="flex items-center gap-2">
+              <i class="text-[var(--accent)]" data-lucide="box"></i>
+              <span style="font-family:'Poppins', Inter" class="text-sm font-medium">Framer</span>
+            </div>
+            <p class="mt-1 text-sm text-neutral-600">Interactive pages & motion.</p>
+          </div>
+          <div class="rounded-xl border border-neutral-200 bg-white p-4 hover:shadow-md transition lg:col-span-3">
+            <div class="flex items-center gap-2">
+              <i class="text-[var(--accent)]" data-lucide="badge-check"></i>
+              <span style="font-family:'Poppins', Inter" class="text-sm font-medium">Adobe Creative Suite</span>
+            </div>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-lg border border-neutral-200 text-xs text-neutral-700 bg-white">Photoshop</span>
+              <span class="px-2.5 py-1 rounded-lg border border-neutral-200 text-xs text-neutral-700 bg-white">Illustrator</span>
+              <span class="px-2.5 py-1 rounded-lg border border-neutral-200 text-xs text-neutral-700 bg-white">InDesign</span>
+              <span class="px-2.5 py-1 rounded-lg border border-neutral-200 text-xs text-neutral-700 bg-white">After Effects</span>
+              <span class="px-2.5 py-1 rounded-lg border border-neutral-200 text-xs text-neutral-700 bg-white">Premiere Pro</span>
+              <span class="px-2.5 py-1 rounded-lg border border-neutral-200 text-xs text-neutral-700 bg-white">Lightroom</span>
+              <span class="px-2.5 py-1 rounded-lg border border-neutral-200 text-xs text-neutral-700 bg-white">Acrobat</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+  <style>
+    .bigbang-section {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .bigbang-content h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin: 0;
+      opacity: 0.7;
+    }
+
+    .bigbang-content h2 {
+      font-size: 10rem;
+      font-weight: 900;
+      letter-spacing: -5px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .bigbang-content .tagline {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+  </style>
+
+
+  <!-- Isolated BigBang Section -->
+  <section class="bigbang-section">
+    <div class="bigbang-content">
+      <h1>Introducing</h1>
+      <h2>My Work</h2>
+      <div class="tagline">Typeface</div>
+    </div>
+  </section>
+
+  <div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+  <!-- Pixel font only for this section -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<section id="gd-calendar-grid">
+  <div class="gd-content">
+    <h2 class="gd-header">My Design Showcase</h2>
+    <p class="gd-paragraph">
+      Creativity meets precision — every piece is crafted with attention to detail 
+      and a touch of imagination. From bold color palettes to clean layouts, 
+      these designs bring ideas to life and inspire connection. Explore the 
+      collection and discover how visuals can tell powerful stories.
+    </p>
+  </div>
+
+  <div class="gd-grid">
+    <div class="gd-card"><img src="assets/wallpaper/Amey A Pilankar-car-wallpaper.jpg" alt="Design 1"></div>
+    <div class="gd-card"><img src="assets/wallpaper/Amruta - Modern Simple Moon City Desktop Wallpaper.jpg" alt="Design 2"></div>
+    <div class="gd-card"><img src="assets/wallpaper/BEN JOSEPH WALLP - Artboard 1.jpg" alt="Design 3"></div>
+    <div class="gd-card"><img src="assets/wallpaper/black-muscle-car-dodge-charger-wallpaper-1680x1050_5.jpg" alt="Design 4"></div>
+    <div class="gd-card"><img src="assets/wallpaper/Firefly Andaman beach 51986.jpg" alt="Design 5"></div>
+    <div class="gd-card"><img src="assets/wallpaper/Firefly Andaman islands, beautiful view of the tropical bay, blue lagoon 32431.jpg" alt="Design 6"></div>
+    <div class="gd-card"><img src="assets/wallpaper/Firefly flowers orange sky 6820.jpg" alt="Design 7"></div>
+    <div class="gd-card"><img src="assets/wallpaper/Firefly orange & blue shades different flower 42416.jpg" alt="Design 8"></div>
+    <div class="gd-card"><img src="assets/wallpaper/Firefly splash of colours (more focused on our new orange & blue) shades different 31841 V2.jpg" alt="Design 9"></div>
+    <div class="gd-card"><img src="assets/wallpaper/Liverpool Logo Wallpaper HD 2.jpg" alt="Design 10"></div>
+    <div class="gd-card"><img src="assets/wallpaper/Ankit Chavan -vintage-car-wallpaper.jpg" alt="Design 11"></div>
+    <div class="gd-card"><img src="assets/wallpaper/liverpool-rfeuh3u9g2g2p0g7.jpg" alt="Design 12"></div>
+  </div>
+</section>
+
+<style>
+  /* Entire section scoped */
+  #gd-calendar-grid {
+    height: 100vh;                 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    overflow: hidden;
+    padding: 40px;
+    box-sizing: border-box;
+    color: #fff;
+    gap: 40px;
+  }
+
+  /* Left content only */
+  #gd-calendar-grid .gd-content {
+    flex: 1;
+    max-width: 35%;
+  }
+
+  #gd-calendar-grid .gd-header {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #00ffcc;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 255, 204, 0.4); /* slight glint */
+  }
+
+  #gd-calendar-grid .gd-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #bbb;
+  }
+
+  /* Grid on the right */
+  #gd-calendar-grid .gd-grid {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    max-height: 90vh;              
+    transform: rotateX(45deg) rotateZ(45deg);
+    transform-style: preserve-3d;
+    overflow: hidden;
+  }
+
+  /* Cards */
+  #gd-calendar-grid .gd-card {
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #gd-calendar-grid .gd-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+  }
+</style>
+
+<div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+  <section id="gd-poster-showcase" aria-label="Poster showcase">
+  <!-- Background cover behind the whole tiled posters -->
+  <div class="gd-cover" aria-hidden="true"></div>
+
+  <!-- content wrapper so the cover sits behind -->
+  <div class="gd-wrap">
+    <div class="gd-row gd-row-top">
+      <div class="gd-card" style="--bg:#f4a6a6; --rotate:-6deg; --offset:18px; --z:3;">
+        <div class="gd-bg"></div>
+        <img src="assets/products/223.jpg" alt="Poster 1">
+      </div>
+
+      <div class="gd-card" style="--bg:#a6c8f4; --rotate:2deg; --offset:20px; --z:4;">
+        <div class="gd-bg"></div>
+        <img src="assets/products/296.jpg" alt="Poster 2">
+      </div>
+
+      <div class="gd-card" style="--bg:#f4d06f; --rotate:-3deg; --offset:16px; --z:2;">
+        <div class="gd-bg"></div>
+        <img src="assets/products/297.jpg" alt="Poster 3">
+      </div>
+    </div>
+
+    <div class="gd-row gd-row-bottom">
+      <div class="gd-card" style="--bg:#c4f4a6; --rotate:4deg; --offset:20px; --z:1;">
+        <div class="gd-bg"></div>
+        <img src="assets/products/399.jpg" alt="Poster 4">
+      </div>
+
+      <div class="gd-card" style="--bg:#f4b6e5; --rotate:-2deg; --offset:22px; --z:5;">
+        <div class="gd-bg"></div>
+        <img src="assets/products/454.jpg" alt="Poster 5">
+      </div>
+
+      <div class="gd-card" style="--bg:#a6f0f4; --rotate:6deg; --offset:18px; --z:2;">
+        <div class="gd-bg"></div>
+        <img src="assets/products/523.jpg" alt="Poster 6">
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Fully scoped to avoid any global overrides */
+  #gd-poster-showcase {
+    position: relative;
+    padding: 64px 48px;
+    box-sizing: border-box;
+    background: #f7f7f7;
+    overflow: hidden;               /* keep everything inside */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 72vh;
+    --card-width: 260px;            /* tweak globally if needed */
+    --card-gap: 40px;
+  }
+
+  /* Background cover (the sheet behind the whole tiled group) */
+  #gd-poster-showcase .gd-cover {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 86%;
+    height: 72%;
+    transform: translate(-50%, -50%) rotate(-3deg);
+    background: linear-gradient(180deg, #ffffff 0%, #f3f3f3 100%);
+    border-radius: 20px;
+    box-shadow: 0 18px 50px rgba(13, 28, 50, 0.12);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Wrap content above the cover */
+  #gd-poster-showcase .gd-wrap {
+    position: relative;
+    z-index: 1; /* above the cover */
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--card-gap) + 10px);
+    align-items: center;
+  }
+
+  /* Row layout */
+  #gd-poster-showcase .gd-row {
+    display: flex;
+    gap: var(--card-gap);
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Slight vertical offset so rows feel staggered */
+  #gd-poster-showcase .gd-row-top { transform: translateY(-18px); }
+  #gd-poster-showcase .gd-row-bottom { transform: translateY(18px); }
+
+  /* Poster card */
+  #gd-poster-showcase .gd-card {
+    position: relative;
+    width: var(--card-width);
+    aspect-ratio: 3 / 4;
+    transform: rotate(var(--rotate, 0deg));
+    z-index: var(--z, 2);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+    will-change: transform;
+  }
+
+  /* Small hover lift (optional, remove if undesired) */
+  #gd-poster-showcase .gd-card:hover {
+    transform: translateY(-8px) rotate(var(--rotate, 0deg));
+    box-shadow: 0 20px 36px rgba(8, 20, 40, 0.18);
+  }
+
+  /* The background sheet behind each poster (the colored preview) */
+  #gd-poster-showcase .gd-bg {
+    position: absolute;
+    top: var(--offset, 18px);
+    left: var(--offset, 18px);
+    right: calc(-1 * var(--offset, 18px));
+    bottom: calc(-1 * var(--offset, 18px));
+    background: var(--bg, #ddd);
+    border-radius: 10px;
+    z-index: 0;
+    box-shadow: 0 10px 30px rgba(8, 20, 40, 0.09);
+    transform-origin: center;
+  }
+
+  /* Poster image */
+  #gd-poster-showcase img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 8px 22px rgba(8, 20, 40, 0.14);
+  }
+
+  /* Small screens: stack into 2 columns then 1 column */
+  @media (max-width: 1000px) {
+    #gd-poster-showcase {
+      padding: 40px 24px;
+      --card-width: 210px;
+      --card-gap: 28px;
+      min-height: 80vh;
+    }
+
+    #gd-poster-showcase .gd-cover {
+      width: 94%;
+      height: 74%;
+      transform: translate(-50%, -48%) rotate(-2deg);
+    }
+  }
+
+  @media (max-width: 740px) {
+    #gd-poster-showcase {
+      --card-width: 160px;
+      padding: 24px;
+      min-height: auto;
+    }
+
+    /* stack into two rows of 3 -> keep layout but allow wrapping */
+    #gd-poster-showcase .gd-row {
+      gap: 20px;
+    }
+
+    /* if necessary, allow rows to wrap to 2 or 1 per row */
+    #gd-poster-showcase .gd-row {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>
+
+  <div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+<section id="gd-font-showcase">
+  <!-- Top font showcase -->
+  <div class="gd-font-block">
+    <div class="gd-meta gd-left">
+      <p>Use cases<br>Titles only</p>
+    </div>
+    <div class="gd-meta gd-right">
+      <p>Designed by<br>Ben Joseph</p>
+      <p>Weights<br>Regular</p>
+    </div>
+    <div class="gd-main">
+      <h1 class="gd-typewriter">Edelweiss</h1>
+      <h2 class="gd-fade-rotate">Tokio-Life</h2>
+      <p class="gd-desc">Edelweiss Tokio Life Insurance is a joint venture between Edelweiss Financial Services and Tokio Marine Holdings, offering a wide range of life insurance products tailored to protection, savings, and investment needs. The company focuses on customer-centric solutions, innovation, and accessibility to help individuals secure their financial future.</p>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <hr>
+
+  <!-- Bottom font showcase -->
+  <div class="gd-font-block">
+    <div class="gd-meta gd-left">
+      <p>Use cases<br>Body text only</p>
+    </div>
+    <div class="gd-meta gd-right">
+      <p>Designed by<br>Ben Joseph</p>
+      <p>Weights<br>Regular<br>Medium</p>
+    </div>
+    <div class="gd-main">
+      <h1 class="gd-typewriter delay">My Work Designs</h1>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Scoped section */
+  #gd-font-showcase {
+    background: #f9f9f9;
+    color: #111;
+    padding: 60px 80px;
+    font-family: sans-serif;
+  }
+
+  #gd-font-showcase .gd-font-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  /* Metadata */
+  #gd-font-showcase .gd-meta {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #555;
+    position: absolute;
+    top: 0;
+  }
+
+  #gd-font-showcase .gd-left {
+    left: 0;
+  }
+
+  #gd-font-showcase .gd-right {
+    right: 0;
+    text-align: right;
+  }
+
+  /* Main font area */
+  #gd-font-showcase .gd-main {
+    text-align: left;
+    margin-top: 40px;
+  }
+
+  #gd-font-showcase h1 {
+    font-size: 6rem;
+    margin: 0;
+  }
+
+  #gd-font-showcase h2 {
+    font-size: 4rem;
+    margin: 0;
+  }
+
+  #gd-font-showcase .gd-desc {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    max-width: 400px;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  /* Typewriter effect with cycle */
+  .gd-typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid #111;
+    white-space: nowrap;
+    animation: typing 3s steps(20, end) 1s infinite alternate,
+               blink 0.7s step-end infinite;
+  }
+
+  .gd-typewriter.delay {
+    animation-delay: 2s, 2s;
+  }
+
+  @keyframes typing {
+    0% { width: 0 }
+    40%, 60% { width: 100% }
+    100% { width: 0 }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent }
+  }
+
+  /* Fade & rotate animation with cycle */
+  .gd-fade-rotate {
+    display: inline-block;
+    opacity: 0;
+    transform: rotateX(-90deg);
+    animation: fadeRotate 4s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes fadeRotate {
+    0% { opacity: 0; transform: rotateX(-90deg); }
+    20%, 40% { opacity: 1; transform: rotateX(0deg); }
+    80% { opacity: 0; transform: rotateX(90deg); }
+    100% { opacity: 0; transform: rotateX(-90deg); }
+  }
+
+  /* Divider line */
+  #gd-font-showcase hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 60px 0;
+  }
+</style>
+
+
+<section class="bguidelines-fullgrid">
+  <!-- Row 1 -->
+  <div class="bguidelines-cell"></div>
+  <div class="bguidelines-cell"><img src="assets/tokio/1x1-01.jpg" alt="Grid Image 1"></div>
+  <div class="bguidelines-cell"></div>
+  <div class="bguidelines-cell"><img src="assets/tokio/24 Award Earned in FY 23-24!.jpg" alt="Grid Image 2"></div>
+
+  <!-- Row 2 -->
+  <div class="bguidelines-cell"><img src="assets/tokio/157772-OULMK1-221.jpg" alt="Grid Image 3"></div>
+  <div class="bguidelines-cell"></div>
+  <div class="bguidelines-cell"><img src="assets/tokio/AMPKM - Landing Page_Landing Page Desktop.jpg" alt="Grid Image 4"></div>
+  <div class="bguidelines-cell"></div>
+
+  <!-- Row 3 -->
+  <div class="bguidelines-cell"></div>
+  <div class="bguidelines-cell"><img src="assets/tokio/ANNUAL REPORT - 2025 - Final-02.jpg" alt="Grid Image 5"></div>
+  <div class="bguidelines-cell"></div>
+  <div class="bguidelines-cell"><img src="assets/tokio/ANNUAL REPORT - 2025-02.jpg" alt="Grid Image 6"></div>
+
+  <!-- Row 4 -->
+  <div class="bguidelines-cell"><img src="assets/tokio/Awards Baku CTC-01.jpg" alt="Grid Image 7"></div>
+  <div class="bguidelines-cell"></div>
+  <div class="bguidelines-cell"><img src="assets/tokio/ANNUAL REPORT - 2025 - Final2-01.jpg" alt="Grid Image 8"></div>
+  <div class="bguidelines-cell"></div>
+</section>
+
+<style>
+  .bguidelines-fullgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    height: 150vh;
+    width: 100%;
+    padding: 10px;
+    background: #f4f0ec; /* section background */
+  }
+
+  .bguidelines-cell {
+    background: transparent; /* empty cells blend in */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .bguidelines-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* no stretching */
+    border-radius: 20px; /* rounded edges */
+    display: block;
+  }
+</style>
+<div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+
+<section class="social-section">
+  <div class="social-content">
+    <div class="social-icon">✦</div>
+    <h1>SOCIAL<br>MEDIA</h1>
+  </div>
+  <div class="social-footer">
+    <span class="circle">S</span>
+    <hr>
+    <span class="circle">✦</span>
+  </div>
+</section>
+
+<style>
+  .social-section {
+    background: #5a63f2; /* Blue background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fdf4e3; /* Off-white text */
+    font-family: 'Arial Black', sans-serif;
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  /* Optional noise texture effect */
+  .social-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/noisy.png"); 
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .social-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .social-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .social-content h1 {
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .social-footer {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 1;
+  }
+
+  .social-footer hr {
+    flex: 1;
+    border: none;
+    border-top: 2px solid rgba(0,0,0,0.6);
+    margin: 0 1rem;
+  }
+
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(0,0,0,0.6);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: transparent;
+    color: rgba(0,0,0,0.8);
+  }
+</style>
+
+<div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+<section class="portfolio-social">
+  <!-- Left Text -->
+  <div class="portfolio-text">
+    <h3>Portfolio - Social Media</h3>
+    <h2 class="highlight">BEN JOSEPH</h2>
+    <p>
+      “I’m Ben Joseph, a passionate graphic designer who communicates through creativity. Being mute and deaf has never limited my vision—instead, it fuels my drive to craft meaningful, visually striking designs that speak louder than words.”
+    </p>
+    <p class="date">Date: 2023 - now</p>
+  </div>
+
+  <!-- Right Gallery -->
+  <div class="portfolio-gallery">
+    <!-- Phone in center -->
+    <div class="phone-frame">
+      <img src="assets/social_ss.png" alt="Phone Preview" />
+    </div>
+
+    <!-- Images around the phone -->
+    <div class="work work-top-right">
+      <img src="assets/so_img_1.png" alt="Portfolio Item 1" />
+    </div>
+    <div class="work work-bottom-right">
+      <img src="assets/DESKTOP - Ben Space neon night background.jpg" alt="Portfolio Item 2" />
+    </div>
+    <div class="work work-bottom-left">
+      <img src="assets/Backdrop - Direct -1000px x 1200px.jpg" alt="Portfolio Item 3" />
+    </div>
+    <div class="work work-bottom-center">
+      <img src="assets/ben_photo.jpg" alt="Portfolio Item 4" />
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Full viewport section */
+  .portfolio-social {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    height: 100vh;
+    width: 100%;
+    background: #f2e9df;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 6rem;
+    box-sizing: border-box;
+  }
+
+  /* Left text */
+  .portfolio-text {
+    max-width: 400px;
+    justify-self: center;
+  }
+
+  .portfolio-text h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-text .highlight {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-text .date {
+    font-size: 0.9rem;
+    color: #444;
+  }
+
+  /* Gallery layout */
+  .portfolio-gallery {
+    position: relative;
+    display: grid;
+    place-items: center;
+    grid-template-areas:
+      ". phone top-right"
+      "bottom-left phone bottom-right"
+      ". phone bottom-center";
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+    justify-self: center;
+  }
+
+  /* Phone (main frame) */
+  .phone-frame {
+    grid-area: phone;
+    background: #111;
+    border-radius: 3rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    width: 28vw;
+    max-width: 380px;
+    height: auto;
+  }
+
+  .phone-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 2.5rem;
+    display: block;
+  }
+
+  /* Works (with black border) */
+  .work {
+    border-radius: 1rem;
+    overflow: hidden;
+    background: white;
+    max-width: 180px;
+    border: 2px solid rgba(0, 0, 0, 0.7); /* black border */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  .work img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.9rem;
+  }
+
+  .work-top-right   { grid-area: top-right; }
+  .work-bottom-right{ grid-area: bottom-right; }
+  .work-bottom-left { grid-area: bottom-left; }
+  .work-bottom-center { grid-area: bottom-center; }
+</style>
+
+<div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+<!-- Contact Section (BJ Unique Naming) -->
+<section id="bj-contact" class="relative mt-24 md:mt-32 mb-28">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-visible">
+    <div class="absolute top-4 right-8 h-14 w-14 rounded-full border border-[var(--accent)]/15"></div>
+    <div class="absolute bottom-10 left-10 h-1 w-28 bg-[var(--accent)]/10 rounded-full rotate-6"></div>
+  </div>
+
+  <div class="mx-auto w-[92vw] md:w-[86vw] lg:w-[78vw]">
+    <div class="max-w-2xl mx-auto text-center bj-fade">
+      <h3 style="font-family:'Poppins', Inter" class="text-2xl md:text-3xl font-semibold tracking-tight text-neutral-900">Get in touch</h3>
+      <p class="mt-2 text-neutral-600">Simple, direct, and fast. I’ll get back within 1–2 business days.</p>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-2 gap-6 bj-fade">
+      <!-- Contact Info -->
+      <div class="rounded-2xl border border-neutral-200 bg-white p-6">
+        <div class="space-y-4">
+          <div class="flex items-center gap-3 text-neutral-800">
+            <i class="text-[var(--accent)]" data-lucide="mail"></i>
+            <a href="mailto:josephkakanath@gmail.com" class="hover:text-[var(--accent)]">josephkakanath@gmail.com</a>
+          </div>
+          <div class="flex items-center gap-3 text-neutral-800">
+            <i class="text-[var(--accent)]" data-lucide="phone"></i>
+            <a href="tel:+919511608826" class="hover:text-[var(--accent)]">+91&nbsp;95116&nbsp;08826</a>
+          </div>
+          <div class="flex items-center gap-3 text-neutral-800">
+            <i class="text-[var(--accent)]" data-lucide="map-pin"></i>
+            <span>Mumbai, India</span>
+          </div>
+        </div>
+        <div class="mt-5 h-px bg-neutral-200"></div>
+        <div class="mt-5 flex items-center gap-2">
+          <a href="https://github.com/benjoseph" target="_blank" rel="noopener noreferrer" class="bj-btn">
+            <i data-lucide="github"></i><span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/benjoseph" target="_blank" rel="noopener noreferrer" class="bj-btn">
+            <i data-lucide="linkedin"></i><span>LinkedIn</span>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="bj-btn">
+            <i data-lucide="instagram"></i><span>Instagram</span>
+          </a>
+        </div>
+        <div class="mt-5 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-xs text-neutral-700">
+          <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+          Open to freelance projects
+        </div>
+      </div>
+
+      <!-- ✅ Contact Form (BJ Unique Naming + Web3Forms) -->
+      <form id="bj-contact-form" action="https://api.web3forms.com/submit" method="POST" class="rounded-2xl border border-neutral-200 bg-white p-6">
+        
+        <!-- ✅ Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="a9dc3e33-b06c-4db0-a1b2-5a3386040ee5"> <!-- ✅ UPDATE -->
+        <input type="hidden" name="subject" value="New BJ Contact Form Submission">
+        <input type="checkbox" name="botcheck" style="display:none;">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="col-span-1">
+            <label for="bj-name" class="block text-sm font-medium text-neutral-800">Name</label>
+            <input id="bj-name" name="name" type="text" required placeholder="Your full name" class="bj-input" />
+          </div>
+          <div class="col-span-1">
+            <label for="bj-email" class="block text-sm font-medium text-neutral-800">Email</label>
+            <input id="bj-email" name="email" type="email" required placeholder="you@company.com" class="bj-input" />
+          </div>
+          <div class="col-span-1">
+            <label for="bj-project" class="block text-sm font-medium text-neutral-800">Project Type</label>
+            <select id="bj-project" name="project" class="bj-input">
+              <option>Brand Identity</option>
+              <option>Website / UI</option>
+              <option>Illustration</option>
+              <option>Packaging</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="col-span-1">
+            <label for="bj-budget" class="block text-sm font-medium text-neutral-800">Estimated Budget</label>
+            <select id="bj-budget" name="budget" class="bj-input">
+              <option>Under $1,000</option>
+              <option>$1,000 – $3,000</option>
+              <option>$3,000 – $8,000</option>
+              <option>$8,000+</option>
+              <option>Unsure</option>
+            </select>
+          </div>
+          <div class="col-span-1 sm:col-span-2">
+            <label for="bj-message" class="block text-sm font-medium text-neutral-800">Project Details</label>
+            <textarea id="bj-message" name="message" rows="5" required placeholder="Timeline, goals, links…" class="bj-input"></textarea>
+          </div>
+          <div class="col-span-1 sm:col-span-2 flex items-start gap-2">
+            <input id="bj-consent" name="consent" type="checkbox" class="bj-checkbox" required />
+            <label for="bj-consent" class="text-sm text-neutral-700">I agree to the storage of my details for the purpose of replying to this inquiry.</label>
+          </div>
+          <div class="col-span-1 sm:col-span-2 flex items-center justify-between gap-3">
+            <p id="bj-form-status" class="text-sm text-neutral-600" aria-live="polite"></p>
+            <button type="submit" class="bj-submit">
+              <span>Send Message</span>
+              <i data-lucide="send"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Web3Forms Script (BJ Unique IDs) -->
+<script>
+  const bjForm = document.getElementById("bj-contact-form");
+  const bjStatus = document.getElementById("bj-form-status");
+
+  bjForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(bjForm);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    bjStatus.innerHTML = "⏳ Sending...";
+
+    try {
+      const res = await fetch(bjForm.action, {
+        method: bjForm.method,
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: json
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        bjStatus.innerHTML = "✅ Thank you! Your message has been sent.";
+        bjForm.reset();
+      } else {
+        bjStatus.innerHTML = "❌ Oops! " + (data.message || "Something went wrong.");
+      }
+    } catch (error) {
+      bjStatus.innerHTML = "❌ Network error. Please try again later.";
+    }
+  });
+</script>
+
+  <div class="marquee-container" role="region" aria-label="Scrolling text: BEN JOSEPH">
+  <!-- Deprecated tag (still works in many browsers) -->
+  <marquee class="marquee-text"
+           behavior="scroll"
+           direction="left"
+           scrollamount="6"
+           loop="infinite">
+    BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     BEN JOSEPH ~ ░█▀▀█ ░█▀▀▀ ░█▀▄▀█ ░█▀▀▀ ░█▀▀█ ░█▀▀▀ ░█▀▀█ ~ GRAPHIC DESIGNER     ||     
+  </marquee>
+</div>
+
+  <!-- Footer -->
+  <footer class="border-t border-neutral-200 bg-white">
+    <div class="mx-auto w-[92vw] md:w-[86vw] lg:w-[78vw] py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <div class="h-7 w-7 rounded-md bg-[var(--accent)]/10 border border-[var(--accent)]/30 flex items-center justify-center">
+            <span style="font-family:'Poppins', Inter" class="text-[12px] font-semibold tracking-tight text-[var(--accent)]">BJ</span>
+          </div>
+          <span class="text-sm text-neutral-700">Ben Joseph — Graphic Designer</span>
+        </div>
+        <nav class="flex items-center gap-3 text-sm">
+          <a href="#work" class="px-2 py-1 rounded-md hover:bg-neutral-100 text-neutral-700" data-cursor="hover">Work</a>
+          <a href="#about" class="px-2 py-1 rounded-md hover:bg-neutral-100 text-neutral-700" data-cursor="hover">About</a>
+          <a href="#case" class="px-2 py-1 rounded-md hover:bg-neutral-100 text-neutral-700" data-cursor="hover">Case Studies</a>
+          <a href="#contact" class="px-2 py-1 rounded-md hover:bg-neutral-100 text-neutral-700" data-cursor="hover">Contact</a>
+        </nav>
+      </div>
+      <div class="mt-6 flex items-center justify-between">
+        <p class="text-xs text-neutral-500">© <span id="year"></span> Ben Joseph. All rights reserved.</p>
+        <a href="#hero" class="inline-flex items-center gap-1 text-xs text-neutral-700 hover:text-[var(--accent)]" data-cursor="hover" aria-label="Back to top">
+          Back to top <i data-lucide="arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Accent theme switchers
+    const savedAccent = localStorage.getItem('accent');
+    if (savedAccent) document.body.style.setProperty('--accent', savedAccent);
+    document.querySelectorAll('[data-accent]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const color = btn.getAttribute('data-accent');
+        document.body.style.setProperty('--accent', color);
+        localStorage.setItem('accent', color);
+        lucide.createIcons(); // refresh if color class usage changes
+      });
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = menuBtn.querySelector('i');
+        icon.setAttribute('data-lucide', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
+        lucide.createIcons();
+      });
+    }
+
+    // Loader
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      if (!loader) return;
+      loader.style.opacity = '0';
+      loader.style.transition = 'opacity 300ms ease';
+      setTimeout(() => loader.remove(), 320);
+    });
+
+    // Scroll progress
+    const progressBar = document.getElementById('progress');
+    const updateProgress = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = progress + '%';
+    };
+    window.addEventListener('scroll', updateProgress);
+    updateProgress();
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.will-reveal');
+    const revealIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0', 'translate-y-6');
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          revealIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealIO.observe(el));
+
+    // Parallax
+    const parallaxEls = document.querySelectorAll('[data-parallax-speed]');
+    const parallax = () => {
+      const scrollY = window.scrollY;
+      parallaxEls.forEach(el => {
+        const speed = parseFloat(el.getAttribute('data-parallax-speed')) || 0;
+        el.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
+      });
+    };
+    window.addEventListener('scroll', parallax, { passive: true });
+    parallax();
+
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    if (cursor) {
+      const move = (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+      };
+      window.addEventListener('mousemove', move);
+      document.querySelectorAll('[data-cursor="hover"]').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.style.width = '32px';
+          cursor.style.height = '32px';
+          cursor.style.backgroundColor = 'var(--accent)';
+          cursor.style.opacity = '0.1';
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.style.width = '16px';
+          cursor.style.height = '16px';
+          cursor.style.backgroundColor = 'transparent';
+          cursor.style.opacity = '1';
+        });
+      });
+      window.addEventListener('mousedown', () => { cursor.style.transform += ' scale(0.9)'; });
+      window.addEventListener('mouseup', () => {
+        cursor.style.transform = 'translate(-50%,-50%)';
+      });
+    }
+
+    // Work filter
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const cards = document.querySelectorAll('[data-category]');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        filterButtons.forEach(b => b.classList.remove('border-[var(--accent)]', 'text-[var(--accent)]'));
+        btn.classList.add('border-[var(--accent)]', 'text-[var(--accent)]');
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          const show = filter === 'all' || category === filter;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+
+    // Tilt effect
+    const tiltEls = document.querySelectorAll('.tilt');
+    tiltEls.forEach(card => {
+      let bounds;
+      card.addEventListener('mouseenter', () => {
+        bounds = card.getBoundingClientRect();
+        card.style.transition = 'transform 120ms ease';
+      });
+      card.addEventListener('mousemove', (e) => {
+        const x = e.clientX - bounds.left;
+        const y = e.clientY - bounds.top;
+        const rx = ((y - bounds.height / 2) / bounds.height) * -8;
+        const ry = ((x - bounds.width / 2) / bounds.width) * 8;
+        card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transition = 'transform 220ms ease';
+        card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateZ(0)';
+      });
+    });
+
+    // Contact form (mock submit)
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    const successNote = document.getElementById('successNote');
+    const submitBtn = document.getElementById('submitBtn');
+
+    const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+        const consent = form.consent.checked;
+
+        if (!name || !validateEmail(email) || !message || !consent) {
+          statusEl.textContent = 'Please complete all required fields.';
+          statusEl.classList.remove('text-green-700');
+          statusEl.classList.add('text-neutral-600');
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+        statusEl.textContent = 'Sending…';
+
+        // Simulate async send
+        await new Promise(r => setTimeout(r, 900));
+
+        statusEl.textContent = '';
+        successNote.classList.remove('hidden');
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+      });
+    }
+  </script>
+</body>
+</html>
